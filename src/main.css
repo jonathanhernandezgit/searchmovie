@@ -1,0 +1,129 @@
+:root{
+    max-width: 1280px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+.search-form {
+    width: 90vw;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.form-input {
+    width: 100%;
+    /* border: transparent; */
+    max-width: 600px;
+    background: #FFF;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: #818181;
+    letter-spacing: 1.5px;
+    margin-top: 1rem;
+  }
+
+  .movies {
+    width: 90vw;
+    max-width: var(--max-width);
+    display: grid;
+    gap: 2rem;
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    padding-top: 3rem;
+  }
+
+  .movie {
+    position: relative;
+    overflow: hidden;
+  }
+  .movie img {
+    width: 100%;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .single-movie {
+    width: 90vw;
+    max-width: var(--max-width);
+    margin: 4rem auto;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .single-movie img {
+    width: 100%;
+    display: block;
+  }
+
+  .single-movie p {
+    max-width: 35em;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .single-movie a {
+    padding: 0.2rem 0.4rem;
+    background-color: #49a6e9;
+    color: #FFF;
+    border-radius: 0.3rem;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    display: inline-block;
+ 
+  }
+
+  .single-movie h4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+
+  @media screen and (min-width: 768px) {
+    .movies {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .single-movie {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .movies {
+      grid-template-columns: repeat(auto-fill, minmax(260px, 2fr));
+    }
+  }
+
