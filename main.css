@@ -72,47 +72,16 @@ h4 {
     object-fit: cover;
   }
 
-  .single-movie {
-    width: 90vw;
-    max-width: var(--max-width);
-    margin: 4rem auto;
-    display: grid;
-    gap: 2rem;
-  }
-
-  .single-movie img {
-    width: 100%;
-    display: block;
-  }
-
-  .single-movie p {
-    max-width: 35em;
-    font-size: 1.2rem;
-    margin-top: 1.5rem;
-    line-height: 1.8;
-  }
-
-  .single-movie a {
-    padding: 0.2rem 0.4rem;
-    background-color: #49a6e9;
-    color: #FFF;
-    border-radius: 0.3rem;
-    letter-spacing: 0.1rem;
-    font-size: 1rem;
-    display: inline-block;
- 
-  }
-
-  .single-movie h4 {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
   .visible {
     display: flex !important;
   }
   .hidden {
     display: none !important;
+  }
+
+  .root {
+    display: flex;
+    justify-content: center;
   }
   .modal {
     width: 100%;
@@ -127,13 +96,25 @@ h4 {
 
   .modal-container {
     background: white;
-    width: 50%;
+    width: calc(18em + 18vw);
     height: 50%;
- 
+  }
+
+  .modal-container h2 {
+    font-size: calc(1em + 1vw);
+  }
+  .modal-container p {
+    font-size: calc(0.5em + 0.5vw);
+  }
+
+  .modal-container img {
+    width: calc(2.5em + 2.5vw);
+    height: calc(10em + 10vw);
   }
   
-  .modal-container-close img{
-    width: 5%;
+  .modal-container-close img{  
+    width: 8%;
+    height: 8%  
   }
 
   .card {
@@ -160,11 +141,23 @@ h4 {
     width: 60%;
     justify-content: center;
   }
-
+  
+  .tmdb-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+  .tmdb-img img{
+    width: 90%;
+  }
 
   @media screen and (min-width: 768px) {
     .movies {
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+    .modal-container {
+      width: 50%;
+      height: 55%
     }
   }
 
@@ -172,11 +165,20 @@ h4 {
     .single-movie {
       grid-template-columns: 1fr 2fr;
     }
+    .modal-container {
+      width: 50%;
+      height: 70%
+    }
+
   }
 
   @media screen and (min-width: 1440px) {
     .movies {
       grid-template-columns: repeat(auto-fill, minmax(260px, 2fr));
+    }
+    .modal-container {
+      width: 60%;
+      height: 65%;
     }
   }
 
