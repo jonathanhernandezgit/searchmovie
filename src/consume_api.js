@@ -2,17 +2,15 @@ const fetchData = require('../utils/fetchData');
 
 const API = 'https://api.themoviedb.org/3/search/movie?api_key=58ee28dd35a0fca7dfc2113ebf61d147&query=';
 
-fetchData(API +'coco')
-const movie = document.querySelector(".movie")
+fetchData(API +'batman')
+//const movie = document.querySelector(".movie")
     .then(datos => {
         let iteraciones = Object.keys(datos).length;
         let url_image = ""
         let html = ''
 
         for (var i = 1; i <= iteraciones; i++){
-            url_image = datos.results[i].poster_path
-
-            movie.innerHTML = "<h1>HOLA</h1>"
+            console.log( datos.results[i].title)    
            
         }
      

@@ -108,6 +108,59 @@ h4 {
     margin-bottom: 1rem;
   }
 
+  .visible {
+    display: flex !important;
+  }
+  .hidden {
+    display: none !important;
+  }
+  .modal {
+    width: 100%;
+    height: 100%;    
+    position: fixed;
+    opacity: 0.9;
+    background-color: rgba(0,0,0,.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .modal-container {
+    background: white;
+    width: 50%;
+    height: 50%;
+ 
+  }
+  
+  .modal-container-close img{
+    width: 5%;
+  }
+
+  .card {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card img {
+    width: 90%;
+  }
+
+  .card-left {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+  }
+
+  .card-left img{
+    width: 60%;
+  }
+
+  .card-right {
+    padding: 1rem;
+    width: 60%;
+    justify-content: center;
+  }
+
 
   @media screen and (min-width: 768px) {
     .movies {
