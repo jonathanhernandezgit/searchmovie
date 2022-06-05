@@ -12,9 +12,8 @@ a {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.5;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8;
     font-size: 0.8rem;
 }
 
@@ -95,9 +94,9 @@ h4 {
   }
 
   .modal-container {
+    padding: 0.5rem;
     background: white;
-    width: calc(18em + 18vw);
-    height: 50%;
+    height: auto;
   }
 
   .modal-container h2 {
@@ -109,7 +108,7 @@ h4 {
 
   .modal-container img {
     width: calc(2.5em + 2.5vw);
-    height: calc(10em + 10vw);
+    height: calc(5em + 10vw);
   }
   
   .modal-container-close img{  
@@ -129,17 +128,29 @@ h4 {
   .card-left {
     display: flex;
     justify-content: center;
-    width: 40%;
+    width: 45%;
   }
 
   .card-left img{
-    width: 60%;
+    width: 100%;
+    height: 100%
   }
 
   .card-right {
-    padding: 1rem;
+    padding: 0 1rem 0 1rem;
     width: 60%;
     justify-content: center;
+  }
+
+  .card-right img {
+    width: 20%;
+    height: 20%;
+  }
+
+
+  .stars img {
+    width: 15%;
+    height: 15%;
   }
   
   .tmdb-img {
@@ -156,8 +167,8 @@ h4 {
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     }
     .modal-container {
-      width: 50%;
-      height: 55%
+      width: 90%;
+      height: 100%
     }
   }
 
@@ -167,7 +178,7 @@ h4 {
     }
     .modal-container {
       width: 50%;
-      height: 70%
+      height: 100%
     }
 
   }

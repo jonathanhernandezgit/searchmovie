@@ -48,9 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.querySelectorAll('.movies').forEach(el => {
     const modal = document.querySelector('.modal')
+ 
 
     el.addEventListener('click', e => {
-        
+     
         const id = e.target.getAttribute("id")
         
         modal.classList.remove('hidden')
@@ -72,12 +73,9 @@ document.querySelectorAll('.movies').forEach(el => {
 const displayMoviesModal = (getMovieModal) => {
     const container = document.querySelector('.modal-container')
     container.innerHTML = ''
-
     let itemHTML = ''
 
      try{
-        console.log(getMovieModal.title)
-         
             itemHTML += 
         
                     `<div class="modal-container-close"> 
@@ -88,9 +86,11 @@ const displayMoviesModal = (getMovieModal) => {
                             <img src="${IMAGE+ getMovieModal.poster_path}">
                         </div>
                         <div class="card-right">
-                            <h2>${ getMovieModal.title}</h2>
+                            <h2>${ getMovieModal.title} (${truncateDate(getMovieModal.release_date)})</h2>
                             <p>${ getMovieModal.overview}</p>
-                            
+                            <h2>${ getMovieModal.vote_average}/10 </h2>
+                            <div class="stars"> 
+                            </div>
                         </div>
                     </section>
                     `
@@ -101,17 +101,49 @@ const displayMoviesModal = (getMovieModal) => {
     }
 
     setTimeout(() => {
-
         container.innerHTML = itemHTML
+        addStarImage(rating(getMovieModal.vote_average))
 
-    },200)
+    },100)
 }
+
 
 const closeModal = () => {
+    const modalContainer = document.querySelector(".modal-container")
     const modal = document.querySelector('.modal')
     modal.classList.add('hidden')
+    modalContainer.innerHTML = ''
     console.log("se está ejecutando closeModal")
 }
+
+const rating = (voteAverage) => {
+    let starRounded = 0;
+    if (voteAverage > 0) {
+        const starTotal = 10;
+        const starPercentage = ((Math.floor(voteAverage))) *.5
+        const starRounded = Math.floor(starPercentage)
+        return starRounded
+    }
+
+}
+const addStarImage = (numberOfStars) => {
+    for(let i = 1; i <= numberOfStars; i++ ) {
+        const url = '/img/icon-star-48.png'
+        var image  = new Image()  
+        image.src = url
+        document.querySelector('.stars').appendChild(image);
+    }
+}
+const truncateDate = (date) => {
+    const stringDate = date.slice(0,4);
+    return stringDate  
+}
+
+ 
+
+
+
+
 
 
 
