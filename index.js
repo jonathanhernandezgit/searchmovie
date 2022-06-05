@@ -128,7 +128,7 @@ const rating = (voteAverage) => {
 }
 const addStarImage = (numberOfStars) => {
     for(let i = 1; i <= numberOfStars; i++ ) {
-        const url = '/img/icon-star-48.png'
+        const url = 'img/icon-star-48.png'
         var image  = new Image()  
         image.src = url
         document.querySelector('.stars').appendChild(image);
