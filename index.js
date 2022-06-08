@@ -79,7 +79,7 @@ const displayMoviesModal = (getMovieModal) => {
             itemHTML += 
         
                     `<div class="modal-container-close"> 
-                        <img onclick="closeModal()" src="https://img.icons8.com/external-doodle-bomsymbols-/91/000000/external-close-doodle-web-design-device-set-2-doodle-bomsymbols-.png"/>
+                        <img onclick="closeModal()" src="https://img.icons8.com/external-doodle-bomsymbols-/91/000000/external-close-doodle-web-design-device-set-2-doodle-bomsymbols-.png" style="cursor:pointer"/>
                     </div>
                     <section class="card"> 
                         <div class="card-left">
@@ -88,7 +88,7 @@ const displayMoviesModal = (getMovieModal) => {
                         <div class="card-right">
                             <h2>${ getMovieModal.title} (${truncateDate(getMovieModal.release_date)})</h2>
                             <p>${ getMovieModal.overview}</p>
-                            <h2>${ getMovieModal.vote_average}/10 </h2>
+                            <h2>${ validateRating(getMovieModal.vote_average)} </h2>
                             <div class="stars"> 
                             </div>
                         </div>
@@ -137,6 +137,10 @@ const addStarImage = (numberOfStars) => {
 const truncateDate = (date) => {
     const stringDate = date.slice(0,4);
     return stringDate  
+}
+
+const validateRating = (rating) => {
+   return rating > 0 ? rating +"/10" : ""
 }
 
  
